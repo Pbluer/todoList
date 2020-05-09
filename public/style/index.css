@@ -7,7 +7,7 @@
   overflow: hidden;
 }
 header {
-  position: fixed;
+  position: static;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -33,8 +33,4 @@ header button {
   background-position: center;
   border: none;
   background-color: rgba(0, 0, 0, 0);
-}
-.container {
-  display: grid;
-  grid-template-columns: 50% 50% 50%;
 }
