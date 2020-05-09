@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+* body {
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+header {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  height: 9vh;
+  width: 100vw;
+  background-color: white;
+  box-shadow: 0 0 5px black;
+}
+header h1 {
+  color: #3faecc;
+  position: relative;
+  left: 2vh;
+}
+header button {
+  position: relative;
+  right: 3vw;
+  height: 9vh;
+  width: 10vw;
+  background-repeat: no-repeat;
+  background-image: url("../icon/adicionar.svg");
+  background-position: center;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.container {
+  display: grid;
+  grid-template-columns: 50% 50% 50%;
+}
