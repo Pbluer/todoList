@@ -1,7 +1,13 @@
 <?php
     require("C:/xampp/htdocs/todoList/src/config/database.php");
-    $registro = DataBase::sendText();   
 
+    if(!empty($_POST['texto'])){
+
+        $dados = $_POST['texto'];
+
+        $registro = DataBase::sendText($dados);
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -24,13 +30,13 @@
         <div>
             <h2>Começar</h2>
 
-            <form action="#" method="POST">
+            <form action="" method="POST">
                 <input type="text" name="texto">
                 <button>Enviar</button>
             </form>            
         </div>
 
-        <?php
+        <!-- <?php
             if($registro === 'passou'){
                 echo '<div class"passou">Enviado</div>';
             }elseif($registro == "erro"){
@@ -38,7 +44,7 @@
             }else{
 
             }
-        ?>
+        ?> -->
     </div>
 
 </body>
