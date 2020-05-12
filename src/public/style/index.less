@@ -1,0 +1,129 @@
+@cor-texto-claro: #f5f5f5;
+@cor-fundo:#f5f5f5;
+@cor-list: #262626;
+@cor-icon-add:#3faecc;
+@cor-icon-excluir: #f95959;
+@tamanho-header: 9vh;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    color: @cor-texto-claro;
+
+    body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: @cor-fundo;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    }
+}
+
+header{
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    height: @tamanho-header;
+    width: 100vw;
+    background-color: @cor-list;
+    box-shadow: 0 0 5px black;   
+
+    h1{
+        color: @cor-texto-claro;        
+        font-size: 1.5rem;        
+    }
+        
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height:  90vh;
+
+    overflow-x: visible;
+
+    .comecar{
+        width: 84vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+        box-shadow: 2px 6px 8px 1px rgba(0,0,0,0.3);
+
+        .header{
+            width: 84vw;
+            height: 8vh;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            background-color: @cor-list;
+
+            h2{
+                position: relative;
+                top: 1.5vh;
+                left: 2vw;
+                font-weight: 700;
+                font-size: 1.5rem;               
+            }
+
+            a{ 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                img{
+                    width: 70%;
+                }
+            }
+        }
+
+        .deveres{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 3vh 0;
+            width: 75vw;            
+            box-shadow: 2px 6px 8px 1px rgba(0, 0, 0, 0.226);
+
+            p{
+                color: @cor-list;
+                padding: 10px;
+            }
+
+            .links{
+                display: flex;
+                flex-direction: column;             
+                width: 15vw;                
+
+                a{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 3px;                    
+                }
+
+                #editar{
+                    background-color: @cor-icon-add;
+                }
+                
+                #apagar{
+                    background-color: @cor-icon-excluir;
+                }
+            }
+
+            div a img{
+                width: 60%;
+            }
+            
+        }
+    }
+}

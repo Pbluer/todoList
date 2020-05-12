@@ -3,26 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/style/index.css">
+    <link rel="stylesheet" href="./src/public/style/index.css">
     <title>To-Do List</title>
 </head>
 <body>
 
     <header>
         <h1>To-Do List</h1>
-        <button></button>
     </header>
+    
+    <?php
+         
+        require("C:/xampp/htdocs/todoList/src/config/database.php");
+        $registro = DataBase::getComecar();     
+    ?>
 
     <div class="container">
 
-        <?php
-         
-            require("C:/xampp/htdocs/todoList/src/config/database.php") ;
-        
-            
-            DataBase::GetInformation($sql);
-        ?>
+        <div class="comecar">
 
+            <span class="header">
+                <h2>Começar</h2>
+                <a href="./src/view/comecar.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
+            </span>
+            <?php foreach($registro as $texto): ?>                
+                    <div class="deveres">
+                        <p> <?= $texto['texto'] ?></p>
+                        <div class="links">
+                            <a href="#" id="editar"><img src="./src/public/icon/editar.svg" alt="editar"></a>
+                            <a href="#" id="apagar"><img src="./src/public/icon/apagar.svg" alt="apagar"></a>
+                        </div>
+                    </div>                
+            <?php endforeach ?>
+            </div>
+
+        </div>
     </div>
 
 </body>

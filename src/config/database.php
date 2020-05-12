@@ -11,27 +11,42 @@ class DataBase{
 
         if($sql->connect_error){
             die('Error: ' . $sql->connect_error);
-        }else{
-            echo "Passou!";
         }
 
         return $sql;
     }
 
-    public function GetInformation(){
+    public function getComecar(){
 
-        $sql = self::GetConnection();
+        $sql = "SELECT * FROM comecar";
+        $conexao = DataBase::GetConnection();
+        $resultado = $conexao->query($sql);
 
-        $comenado = "SELECT * FROM usuario";
+        $registro= [];
+
+        if($resultado->num_rows > 0){
+            while($row = $resultado->fetch_assoc()){
+                $registro[] = $row;
+            }
+        }elseif($conexao->error){
+            echo "Error: " . $conexao->error;
+        }  
         
-        while($dados = mysqli_fetch_assoc($comenado)){
-            echo "<p> {$dados['tarefas']}</p>";
-        }
+        return $registro;
+    }
+
+    public function sendText($texto,$id = 'null'){
         
-        mysqli_close($sql);
+        $sql = DataBase::GetConnection();
+        $query = "INSERT INTO `main`.`comecar` (`ID`,`texto`) VALUES ('{$id}','{$texto}')";    
         
+        $envio = $sql->query($query);
+
+        if($envio){
+            return "passou";            
+        }else{
+            echo $sql->error;
+        }       
     }
 
 }
-
-DataBase::GetConnection();

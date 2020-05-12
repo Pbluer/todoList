@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  color: #f5f5f5;
+}
+* body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+header {
+  position: static;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  height: 9vh;
+  width: 100vw;
+  background-color: #262626;
+  box-shadow: 0 0 5px black;
+}
+header h1 {
+  color: #f5f5f5;
+  font-size: 1.5rem;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  overflow-x: visible;
+}
+.container .comecar {
+  width: 84vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 6px 8px 1px rgba(0, 0, 0, 0.3);
+}
+.container .comecar .header {
+  width: 84vw;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: #262626;
+}
+.container .comecar .header h2 {
+  position: relative;
+  top: 1.5vh;
+  left: 2vw;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.container .comecar .header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+}
+.container .comecar .header a img {
+  width: 70%;
+}
+.container .comecar .deveres {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 3vh 0;
+  width: 75vw;
+  box-shadow: 2px 6px 8px 1px rgba(0, 0, 0, 0.226);
+}
+.container .comecar .deveres p {
+  color: #262626;
+  padding: 10px;
+}
+.container .comecar .deveres .links {
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+}
+.container .comecar .deveres .links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+}
+.container .comecar .deveres .links #editar {
+  background-color: #3faecc;
+}
+.container .comecar .deveres .links #apagar {
+  background-color: #f95959;
+}
+.container .comecar .deveres div a img {
+  width: 60%;
+}
