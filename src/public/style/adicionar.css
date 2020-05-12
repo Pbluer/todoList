@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 90vh;
+  overflow-x: auto;
 }
 .container #caixa {
   width: 60vw;

@@ -17,7 +17,7 @@
         require("C:/xampp/htdocs/todoList/src/config/config.php");
         $comecar = DataBase::GetDados('comecar'); 
         $fazendo = DataBase::GetDados('fazendo'); 
-        $finalizado = DataBase::GetDados('comecar'); 
+        $finalizado = DataBase::GetDados('finalizado'); 
     ?>
 
     <div class="container">
@@ -28,25 +28,44 @@
                 <h2>Começar</h2>
                 <a href="./src/view/comecar.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
             </span>
+
             <?php foreach($comecar as $texto): ?>                
-                    <div class="deveres">
-                        <p> <?= $texto['texto'] ?></p>
-                        <div class="links">
-                            <a href="./src/view/editar.php" id="editar"><img src="./src/public/icon/editar.svg" alt="editar"></a>
-                            <a href="#" id="apagar"><img src="./src/public/icon/apagar.svg" alt="apagar"></a>
-                        </div>
-                    </div>                
+                <div class="deveres">
+                    <p> <?= $texto['texto'] ?></p>
+                    <div class="links">
+                        <a href="./src/view/editar.php" id="editar"><img src="./src/public/icon/editar.svg" alt="editar"></a>
+                        <a href="#" id="apagar"><img src="./src/public/icon/apagar.svg" alt="apagar"></a>
+                    </div>
+                </div>                
             <?php endforeach ?>
-            </div>
-
         </div>
-          
+
         <div class="comecar">
+
             <span class="header">
-                <h2>Começar</h2>
-                <a href="./src/view/comecar.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
+                <h2>Fazendo</h2>
+                <a href="./src/view/fazendo.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
             </span>
+
             <?php foreach($fazendo as $texto): ?>                
+                <div class="deveres">
+                    <p> <?= $texto['texto'] ?></p>
+                    <div class="links">
+                        <a href="./src/view/editar.php" id="editar"><img src="./src/public/icon/editar.svg" alt="editar"></a>
+                        <a href="#" id="apagar"><img src="./src/public/icon/apagar.svg" alt="apagar"></a>
+                    </div>
+                </div>                
+            <?php endforeach ?>
+        </div>        
+        
+        <div class="comecar">
+
+            <span class="header">
+                <h2>Finalizado</h2>
+                <a href="./src/view/fazendo.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
+            </span>
+            <?php if(count($finalizado) > 0): ?>
+                <?php foreach($finalizado as $texto): ?>                
                     <div class="deveres">
                         <p> <?= $texto['texto'] ?></p>
                         <div class="links">
@@ -54,11 +73,15 @@
                             <a href="#" id="apagar"><img src="./src/public/icon/apagar.svg" alt="apagar"></a>
                         </div>
                     </div>                
-            <?php endforeach ?>
-            </div>
-
+                <?php endforeach ?>
+            <?php endif ?>
         </div>
+        
 
+    </div>         
+
+           
+    
     </div>
 
 </body>

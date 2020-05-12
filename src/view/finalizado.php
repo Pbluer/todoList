@@ -28,7 +28,7 @@
     <div class="container">
 
         <div>
-            <h2>Começar</h2>
+            <h2>Finalizado</h2>
 
             <form action="" method="POST">
                 <input type="text" name="texto">
