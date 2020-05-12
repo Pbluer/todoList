@@ -5,9 +5,7 @@
 
         $dados = $_POST['texto'];
 
-        DataBase::sendText('comecar',$dados);
-    }else{
-        error_reporting(0);
+        $registro = DataBase::sendText('fazendo',$dados);
     }
     
 ?>
@@ -29,14 +27,24 @@
 
     <div class="container">
 
-        <div id="caixa">
+        <div>
             <h2>Começar</h2>
 
-            <form action="" method="POST">
+            <form action="index.php" method="POST">
                 <input type="text" name="texto">
                 <button>Enviar</button>
             </form>            
         </div>
+
+        <?php
+            if($registro === 'passou'){
+                echo '<div class"passou">Voltar</div>';
+            }elseif($registro == "erro"){
+                echo '<div class"erro">Erro no enviado</div>';
+            }else{
+
+            }
+        ?>
     </div>
 
 </body>

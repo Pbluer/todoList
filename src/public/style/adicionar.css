@@ -5,7 +5,7 @@
   justify-content: center;
   height: 90vh;
 }
-.container div {
+.container #caixa {
   width: 60vw;
   height: 30vh;
   border: none;
@@ -33,4 +33,7 @@
   height: 6.5vh;
   background-color: #3faecc;
   font-weight: 700;
+}
+.container #voltar {
+  color: #262626;
 }

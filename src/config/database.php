@@ -35,15 +35,15 @@ class DataBase{
         return $registro;
     }
 
-    public function sendText($texto,$id = 'null'){
+    public function sendText($tabela,$texto,$id = 'null'){
         
         $sql = DataBase::GetConnection();
-        $query = "INSERT INTO `main`.`comecar` (`ID`,`texto`) VALUES ('{$id}','{$texto}')";    
+        $query = "INSERT INTO `main`.`$tabela` (`ID`,`texto`) VALUES ('{$id}','{$texto}')";    
         
         $envio = $sql->query($query);
 
         if($envio){
-            return "passou";            
+            return header('Location: http://localhost/todoList/index.php');     
         }else{
             echo $sql->error;
         }       
