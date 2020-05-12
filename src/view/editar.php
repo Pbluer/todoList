@@ -1,17 +1,3 @@
-<?php
-    require("C:/xampp/htdocs/todoList/src/config/config.php");
-
-    if(!empty($_POST['texto'])){
-
-        $dados = $_POST['texto'];
-
-        DataBase::sendText('comecar',$dados);
-    }else{
-        error_reporting(0);
-    }
-    
-?>
-
 <!DOCTYPE html>
 <html lang="pt_BR">
 <head>
@@ -30,7 +16,7 @@
     <div class="container">
 
         <div id="caixa">
-            <h2>Começar</h2>
+            <h2>Editar</h2>
 
             <form action="" method="POST">
                 <input type="text" name="texto">

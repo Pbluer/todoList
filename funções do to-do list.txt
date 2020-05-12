@@ -1,6 +1,0 @@
-Coias que tem em um To-Do List
-
-° Adicionar text
-° Excluir text
-° Editar texto
-° Passar texto

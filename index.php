@@ -14,23 +14,25 @@
     
     <?php
          
-        require("C:/xampp/htdocs/todoList/src/config/database.php");
-        $registro = DataBase::getComecar();     
+        require("C:/xampp/htdocs/todoList/src/config/config.php");
+        $comecar = DataBase::GetDados('comecar'); 
+        $fazendo = DataBase::GetDados('fazendo'); 
+        $finalizado = DataBase::GetDados('comecar'); 
     ?>
 
     <div class="container">
-
+        
         <div class="comecar">
 
             <span class="header">
                 <h2>Começar</h2>
                 <a href="./src/view/comecar.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
             </span>
-            <?php foreach($registro as $texto): ?>                
+            <?php foreach($comecar as $texto): ?>                
                     <div class="deveres">
                         <p> <?= $texto['texto'] ?></p>
                         <div class="links">
-                            <a href="#" id="editar"><img src="./src/public/icon/editar.svg" alt="editar"></a>
+                            <a href="./src/view/editar.php" id="editar"><img src="./src/public/icon/editar.svg" alt="editar"></a>
                             <a href="#" id="apagar"><img src="./src/public/icon/apagar.svg" alt="apagar"></a>
                         </div>
                     </div>                
@@ -38,6 +40,25 @@
             </div>
 
         </div>
+          
+        <div class="comecar">
+            <span class="header">
+                <h2>Começar</h2>
+                <a href="./src/view/comecar.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
+            </span>
+            <?php foreach($fazendo as $texto): ?>                
+                    <div class="deveres">
+                        <p> <?= $texto['texto'] ?></p>
+                        <div class="links">
+                            <a href="./src/view/editar.php" id="editar"><img src="./src/public/icon/editar.svg" alt="editar"></a>
+                            <a href="#" id="apagar"><img src="./src/public/icon/apagar.svg" alt="apagar"></a>
+                        </div>
+                    </div>                
+            <?php endforeach ?>
+            </div>
+
+        </div>
+
     </div>
 
 </body>

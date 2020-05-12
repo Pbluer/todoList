@@ -33,7 +33,7 @@ header h1 {
   align-items: center;
   justify-content: center;
   height: 90vh;
-  overflow-x: visible;
+  overflow: hidden;
 }
 .container .comecar {
   width: 84vw;

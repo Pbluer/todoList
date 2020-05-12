@@ -5,7 +5,7 @@ class DataBase{
 
     public function GetConnection(){
         
-        $data = parse_ini_file('C:\xampp\htdocs\todoList\src\database\data.ini');
+        $data = parse_ini_file('data.ini');
 
         $sql = mysqli_connect($data['host'],$data['user'],$data['password'],$data['database']);
 
@@ -16,9 +16,9 @@ class DataBase{
         return $sql;
     }
 
-    public function getComecar(){
+    public function getDados($tabela){
 
-        $sql = "SELECT * FROM comecar";
+        $sql = "SELECT * FROM {$tabela}";
         $conexao = DataBase::GetConnection();
         $resultado = $conexao->query($sql);
 
