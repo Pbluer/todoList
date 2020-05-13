@@ -5,7 +5,7 @@
 
         $dados = $_POST['texto'];
 
-        DataBase::sendText('comecar',$dados);
+        DataBase::enviarTexto('comecar',$dados);
     }else{
         error_reporting(0);
     }
@@ -38,6 +38,5 @@
             </form>            
         </div>
     </div>
-
 </body>
 </html>

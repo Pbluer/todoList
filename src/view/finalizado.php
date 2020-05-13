@@ -5,7 +5,7 @@
 
         $dados = $_POST['texto'];
 
-        $registro = DataBase::sendText('finalizado',$dados);
+        $registro = DataBase::enviarTexto('finalizado',$dados);
     }
     
 ?>

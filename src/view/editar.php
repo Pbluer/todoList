@@ -1,3 +1,17 @@
+<?php
+    require_once("C:/xampp/htdocs/todoList/src/config/config.php");
+    $tabela = $_GET['tabela'];
+    $id = $_GET['id'];
+    $value = DataBase::pegarDado($tabela,$id);
+    $sql =DataBase::getConnection();    
+    
+    foreach($value as $dado){
+        $value= $dado['texto'];
+    }  
+    
+    
+?>
+
 <!DOCTYPE html>
 <html lang="pt_BR">
 <head>
@@ -8,22 +22,17 @@
     <title>To-Do List</title>
 </head>
 <body>
-
     <header>
         <h1>To-Do List</h1>       
     </header>
-
     <div class="container">
-
         <div id="caixa">
             <h2>Editar</h2>
-
             <form action="" method="POST">
-                <input type="text" name="texto">
+                <input type="text" name="texto" value="<?= $value ?>">
                 <button>Enviar</button>
             </form>            
         </div>
     </div>
-
 </body>
 </html>

@@ -5,7 +5,7 @@
 
         $dados = $_POST['texto'];
 
-        DataBase::sendText('fazendo',$dados);
+        DataBase::enviarTexto('fazendo',$dados);
     }else{
         error_reporting(0);
     }

@@ -16,11 +16,11 @@ class DataBase{
         return $sql;
     }
 
-    public function getDados($tabela){
+    public function pegarDados($tabela){
 
-        $sql = "SELECT * FROM {$tabela}";
-        $conexao = DataBase::GetConnection();
-        $resultado = $conexao->query($sql);
+        $query = "SELECT * FROM {$tabela}";
+        $sql = DataBase::GetConnection();
+        $resultado = $sql->query($query);
 
         $registro= [];
 
@@ -28,14 +28,14 @@ class DataBase{
             while($row = $resultado->fetch_assoc()){
                 $registro[] = $row;
             }
-        }elseif($conexao->error){
-            echo "Error: " . $conexao->error;
+        }elseif($sql->error){
+            echo "Error: " . $sql->error;
         }  
         
         return $registro;
-    }
+    }    
 
-    public function sendText($tabela,$texto,$id = 'null'){
+    public function enviarTexto($tabela,$texto,$id = 'null'){
         
         $sql = DataBase::GetConnection();
         $query = "INSERT INTO `main`.`$tabela` (`ID`,`texto`) VALUES ('{$id}','{$texto}')";    
@@ -43,10 +43,54 @@ class DataBase{
         $envio = $sql->query($query);
 
         if($envio){
+            $sql->close();
             return header('Location: http://localhost/todoList/index.php');     
         }else{
             echo $sql->error;
         }       
     }
 
+    public function pegarDado($tabela,$id){
+
+        $sql = DataBase::GetConnection();
+        $query = "SELECT * FROM $tabela WHERE (`ID`= $id)";
+        $value = $sql->query($query);
+
+        $registro= [];
+        
+
+        if($value->num_rows > 0){
+            while($row = $value->fetch_assoc()){
+                $registro[] = $row;
+            }
+        }elseif($sql->error){
+            echo "Error: " . $sql->error;
+        }  
+        
+        return $registro;        
+    }
+
+    public function editar($tabela,$id,$texto){
+        
+        $sql = DataBase::GetConnection();
+        $query = "UPDATE `main`.`$tabela` SET `texto` = '$texto' WHERE (`ID` = '$id')";
+
+        $resultado = $sql->query($query);
+        if($resultado){
+            $sql->close();
+            return header('Location: http://localhost/todoList/index.php'); 
+        }else{
+            echo $sql->error;
+        }
+    }
+
+    public function excluirDado($tabela,$id){
+        $query = "DELETE FROM `main`.`$tabela` WHERE (`ID` = '$id')";
+    }
 }
+
+
+/* 
+UPDATE `main`.`comecar` SET `texto` = 'Compra café' WHERE (`ID` = '52') and (`texto` = 'Compra pão');
+
+*/

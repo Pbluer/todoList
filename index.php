@@ -15,9 +15,9 @@
     <?php
          
         require("C:/xampp/htdocs/todoList/src/config/config.php");
-        $comecar = DataBase::GetDados('comecar'); 
-        $fazendo = DataBase::GetDados('fazendo'); 
-        $finalizado = DataBase::GetDados('finalizado'); 
+        $comecar = DataBase::pegarDados('comecar'); 
+        $fazendo = DataBase::pegarDados('fazendo'); 
+        $finalizado = DataBase::pegarDados('finalizado'); 
     ?>
 
     <div class="container">
@@ -29,11 +29,11 @@
                 <a href="./src/view/comecar.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
             </span>
 
-            <?php foreach($comecar as $texto): ?>                
-                <div class="deveres">
+            <?php foreach($comecar as $texto): ?>                    
+                <div class="deveres" id="<?= $texto['ID'] ?>">
                     <p> <?= $texto['texto'] ?></p>
                     <div class="links">
-                        <a href="./src/view/editar.php" id="editar"><img src="./src/public/icon/editar.svg" alt="editar"></a>
+                        <a href="./src/view/editar.php?id=<?= $texto['ID']?>&tabela=comecar" id="editar"><img src="./src/public/icon/editar.svg" alt="editar"></a>
                         <a href="#" id="apagar"><img src="./src/public/icon/apagar.svg" alt="apagar"></a>
                     </div>
                 </div>                
@@ -47,8 +47,8 @@
                 <a href="./src/view/fazendo.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
             </span>
 
-            <?php foreach($fazendo as $texto): ?>                
-                <div class="deveres">
+            <?php foreach($fazendo as $texto): ?>
+                <div class="deveres" id=" <?= $texto['ID'] ?>">
                     <p> <?= $texto['texto'] ?></p>
                     <div class="links">
                         <a href="./src/view/editar.php" id="editar"><img src="./src/public/icon/editar.svg" alt="editar"></a>
