@@ -22,22 +22,17 @@
     <title>To-Do List</title>
 </head>
 <body>
-
     <header>
         <h1>To-Do List</h1>       
     </header>
-
     <div class="container">
-
         <div id="caixa">
             <h2>Fazendo</h2>
-
-            <form action="" method="POST">
+            <form method="POST">
                 <input type="text" name="texto">
                 <button>Enviar</button>
             </form>            
         </div>
     </div>
-
 </body>
 </html>

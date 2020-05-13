@@ -3,7 +3,7 @@
 
 class DataBase{
 
-    public function GetConnection(){
+    public  static function GetConnection(){
         
         $data = parse_ini_file('data.ini');
 
@@ -16,7 +16,7 @@ class DataBase{
         return $sql;
     }
 
-    public function pegarDados($tabela){
+    public static function pegarDados($tabela){
 
         $query = "SELECT * FROM {$tabela}";
         $sql = DataBase::GetConnection();
@@ -35,7 +35,7 @@ class DataBase{
         return $registro;
     }    
 
-    public function enviarTexto($tabela,$texto,$id = 'null'){
+    public static function enviarTexto($tabela,$texto,$id = 'null'){
         
         $sql = DataBase::GetConnection();
         $query = "INSERT INTO `main`.`$tabela` (`ID`,`texto`) VALUES ('{$id}','{$texto}')";    
@@ -50,7 +50,7 @@ class DataBase{
         }       
     }
 
-    public function pegarDado($tabela,$id){
+    public static function pegarDado($tabela,$id){
 
         $sql = DataBase::GetConnection();
         $query = "SELECT * FROM $tabela WHERE (`ID`= $id)";
@@ -70,7 +70,7 @@ class DataBase{
         return $registro;        
     }
 
-    public function editar($tabela,$id,$texto){
+    public static function editar($tabela,$id,$texto){
         
         $sql = DataBase::GetConnection();
         $query = "UPDATE `main`.`$tabela` SET `texto` = '$texto' WHERE (`ID` = '$id')";
@@ -85,7 +85,14 @@ class DataBase{
     }
 
     public function excluirDado($tabela,$id){
-        $query = "DELETE FROM `main`.`$tabela` WHERE (`ID` = '$id')";
+        $sql = DataBase::GetConnection();
+        $query = "DELETE FROM `$tabela` WHERE (`ID` = '$id')";
+        $resultado = $sql->query($query);
+        if($resultado){
+            return header('Location: http://localhost/todoList/index.php'); 
+        }else{
+            echo "Erro: " . $sql->error;
+        }
     }
 }
 

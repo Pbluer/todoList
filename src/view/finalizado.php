@@ -1,13 +1,12 @@
 <?php
-    require("C:/xampp/htdocs/todoList/src/config/database.php");
+    require("C:/xampp/htdocs/todoList/src/config/config.php");
 
     if(!empty($_POST['texto'])){
-
         $dados = $_POST['texto'];
-
-        $registro = DataBase::enviarTexto('finalizado',$dados);
+        DataBase::enviarTexto('finalizado',$dados);
+    }else{
+        error_reporting(0);
     }
-    
 ?>
 
 <!DOCTYPE html>
@@ -20,32 +19,17 @@
     <title>To-Do List</title>
 </head>
 <body>
-
     <header>
         <h1>To-Do List</h1>       
     </header>
-
     <div class="container">
-
-        <div>
+        <div id="caixa">
             <h2>Finalizado</h2>
-
-            <form action="" method="POST">
+            <form method="POST">
                 <input type="text" name="texto">
                 <button>Enviar</button>
             </form>            
         </div>
-
-        <!-- <?php
-            if($registro === 'passou'){
-                echo '<div class"passou">Enviado</div>';
-            }elseif($registro == "erro"){
-                echo '<div class"erro">Erro no enviado</div>';
-            }else{
-
-            }
-        ?> -->
     </div>
-
 </body>
 </html>
