@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/public/style/index.css">
+    <link rel="stylesheet" href="./src/public/style/tablet.css">
     <title>To-Do List</title>
 </head>
 <body>
@@ -23,7 +24,7 @@
     <div class="container">
         
         <!-- comecar -->
-        <div class="comecar">
+        <div class="estilo" id="comecar">
 
             <span class="header">
                 <h2>Começar</h2>
@@ -41,7 +42,7 @@
         </div>
         
         <!-- fazendo -->
-        <div class="comecar">
+        <div class="estilo" id="fazendo">
             <span class="header">
                 <h2>Fazendo</h2>
                 <a href="./src/view/fazendo.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
@@ -58,10 +59,10 @@
         </div>    
 
         <!-- finalizado -->
-        <div class="comecar">
+        <div class="estilo" id="finalizado">
             <span class="header">
                 <h2>Finalizado</h2>
-                <a href="./src/view/fazendo.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
+                <a href="./src/view/finalizado.php"><img src="./src/public/icon/adicionar.svg" alt="Adicionar"></a>
             </span>
             <?php if(count($finalizado) > 0): ?>
                 <?php foreach($finalizado as $texto): ?>                

@@ -95,9 +95,3 @@ class DataBase{
         }
     }
 }
-
-
-/* 
-UPDATE `main`.`comecar` SET `texto` = 'Compra café' WHERE (`ID` = '52') and (`texto` = 'Compra pão');
-
-*/
