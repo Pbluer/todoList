@@ -29,7 +29,7 @@
         <div id="caixa">
             <h2>Começar</h2>
             <form method="POST">
-                <input type="text" name="texto">
+                <textarea type="text" name="texto"> </textarea>
                 <button>Enviar</button>
             </form>            
         </div>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/public/style/index.css">
-    <link rel="stylesheet" href="./src/public/style/tablet.css">
     <title>To-Do List</title>
 </head>
 <body>
@@ -32,7 +31,7 @@
             </span>
             <?php foreach($comecar as $texto): ?>
                 <div class="deveres">
-                    <p> <?= $texto['texto'] ?></p>
+                    <p><?= $texto['texto'] ?></p>
                     <div class="links">
                         <a href="./src/view/editar.php?id=<?= $texto['ID']?>&tabela=comecar" id="editar"><img src="./src/public/icon/editar.svg" alt="editar"></a>
                         <a href="./src/view/excluir.php?id=<?= $texto['ID']?>&tabela=comecar" id="apagar"><img src="./src/public/icon/apagar.svg" alt="apagar"></a>

@@ -30,12 +30,12 @@
     form{
         height: 5vh;
 
-        input[type=text]{
+        textarea{
             width: 100%;
             height: 18vh;
             border: none;
-            color: @cor-list;
-            text-align: top;
+            color: @cor-list;            
+            word-wrap: break-word;
         }
 
         button{
@@ -49,5 +49,20 @@
 
     #voltar{
         color: @cor-list;
+    }
+}
+
+
+@media only screen and (min-width:768px){
+    .container{
+
+        #caixa{
+            width: 40vw;
+            height: 40vh;
+
+            form textarea{
+                height: 28vh;
+            }
+        }
     }
 }

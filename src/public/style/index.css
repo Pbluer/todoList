@@ -79,11 +79,12 @@ header h1 {
   text-align: center;
 }
 .container .estilo .deveres p {
-  display: flex;
-  flex-direction: column;
   width: 60vw;
-  height: auto;
+  max-height: 13vh;
   color: #262626;
+  overflow-x: hidden;
+  overflow-y: auto;
+  word-wrap: break-word;
 }
 .container .estilo .deveres .links {
   display: flex;
@@ -162,7 +163,7 @@ header h1 {
     width: 30vw;
     max-height: 75vh;
     margin-bottom: 5vh;
-    left: 1vw;
+    left: 2vw;
   }
   .container #comecar .header {
     width: 30vw;
@@ -186,7 +187,7 @@ header h1 {
     width: 30vw;
     max-height: 75vh;
     margin-bottom: 5vh;
-    left: 0vw;
+    left: -1vw;
   }
   .container #finalizado .header {
     width: 30vw;

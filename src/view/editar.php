@@ -1,15 +1,17 @@
 <?php
     require_once("C:/xampp/htdocs/todoList/src/config/config.php");
     $tabela = $_GET['tabela'];
-    $id = $_GET['id'];
+    $id = $_GET['id'];    
     $value = DataBase::pegarDado($tabela,$id);
-    $sql =DataBase::getConnection();    
     
     foreach($value as $dado){
         $value= $dado['texto'];
     }  
-    
-    
+    if(!empty($_POST['texto'])){
+        DataBase::editar($tabela,$id,$_POST['texto']);
+    }else{
+        
+    }
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +31,7 @@
         <div id="caixa">
             <h2>Editar</h2>
             <form action="" method="POST">
-                <input type="text" name="texto" value="<?= $value ?>">
+                <textarea type="text" name="texto"> <?= $value ?> </textarea>
                 <button>Enviar</button>
             </form>            
         </div>

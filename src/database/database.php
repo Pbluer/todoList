@@ -1,6 +1,5 @@
 <?php
 
-
 class DataBase{
 
     public  static function GetConnection(){
@@ -43,7 +42,6 @@ class DataBase{
         $envio = $sql->query($query);
 
         if($envio){
-            $sql->close();
             return header('Location: http://localhost/todoList/index.php');     
         }else{
             echo $sql->error;
@@ -77,7 +75,6 @@ class DataBase{
 
         $resultado = $sql->query($query);
         if($resultado){
-            $sql->close();
             return header('Location: http://localhost/todoList/index.php'); 
         }else{
             echo $sql->error;
