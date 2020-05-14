@@ -10,6 +10,7 @@
 * PHP 7.4
 * HTML 5 
 * Less
+* MySQL
 
 ### Design
 * Adobe XD
